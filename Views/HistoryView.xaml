@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="HolidayShowdown.Views.HistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Leaderboard — all comparisons so far" FontSize="16" FontWeight="SemiBold"/>
+        <ListView x:Name="HistoryListView" Grid.Row="1" Margin="0,8,0,16">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="#" DisplayMemberBinding="{Binding Rank}" Width="40"/>
+                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding CountryName}" Width="220"/>
+                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding Year}" Width="80"/>
+                    <GridViewColumn Header="Holidays" DisplayMemberBinding="{Binding Count}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <TextBlock Grid.Row="2" Text="⭐ Favourites" FontSize="16" FontWeight="SemiBold"/>
+        <ListView x:Name="FavouritesListView" Grid.Row="3" Margin="0,8,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding CountryName}" Width="220"/>
+                    <GridViewColumn Header="Year" DisplayMemberBinding="{Binding Year}" Width="80"/>
+                    <GridViewColumn Header="Holidays" DisplayMemberBinding="{Binding Count}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
