@@ -1,6 +1,6 @@
 # Holiday Showdown
 
-Topic
+## Topic
 Public holidays comparison — powered by date.nager.at public API.
 
 ## What it does
