@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="HolidayShowdown.Views.CompareView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Compare public holidays between two countries"
+                   FontSize="16" FontWeight="SemiBold" Margin="0,0,0,16"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Country A"/>
+                <ComboBox x:Name="CountryABox" DisplayMemberPath="Name" Margin="0,4,0,0"/>
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" Text="vs" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Country B"/>
+                <ComboBox x:Name="CountryBBox" DisplayMemberPath="Name" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,16,0,0">
+            <TextBlock Text="Year:" VerticalAlignment="Center"/>
+            <ComboBox x:Name="YearBox" Width="100" Margin="8,0,0,0"/>
+            <Button x:Name="CompareButton" Content="Fetch &amp; Compare" Margin="16,0,0,0"
+                    Padding="12,6" Click="CompareButton_Click" Background="{StaticResource BrandPrimary}" Foreground="White"/>
+        </StackPanel>
+
+        <TextBlock x:Name="StatusText" Grid.Row="3" Margin="0,16,0,0" Foreground="{StaticResource LoseColor}" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>

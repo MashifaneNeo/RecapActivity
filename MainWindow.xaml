@@ -1,12 +1,20 @@
 ﻿<Window x:Class="HolidayShowdown.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HolidayShowdown"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Holiday Showdown" Height="600" Width="900"
+        Background="{StaticResource BrandBackground}">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="{StaticResource BrandPrimary}" Padding="16,12">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="🎉 Holiday Showdown" FontSize="20" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="  —  Which country wins more days off?" FontSize="13"
+                           Foreground="#DCEAF0" VerticalAlignment="Bottom" Margin="8,0,0,2"/>
+                <Button Content="History" Click="GoHistory_Click" Margin="24,0,0,0"
+                        Padding="10,4" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button Content="New Compare" Click="GoCompare_Click" Margin="8,0,0,0"
+                        Padding="10,4" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <ContentControl x:Name="MainContent"/>
+    </DockPanel>
 </Window>
